@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TasksRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: TasksRepository::class)]
 class Tasks
 {
@@ -14,6 +14,8 @@ class Tasks
     private $id;
 
     #[ORM\Column(type: 'string', length: 150)]
+    #[Assert\Length(min: 2,max:150,minMessage:"Le nom saisi est trop court", maxMessage:"Le nom saisi est trop long")]
+    #[Assert\NotBlank(message:"Veuillez renseigner le nom de la tâche")]
     private $title;
 
     #[ORM\Column(type: 'boolean')]
