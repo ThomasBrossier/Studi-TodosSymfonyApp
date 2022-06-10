@@ -20,7 +20,7 @@ class TodosListsController extends AbstractController
             'controller_name' => 'TodosListsController',
         ]);
     }
-    #[Route('/create-list', name: 'app_todos_lists')]
+    #[Route('/create-list', name: 'app_create_lists')]
     public function create(Request $request,EntityManagerInterface $em): Response
     {
         $todosList = new Todoslists;
