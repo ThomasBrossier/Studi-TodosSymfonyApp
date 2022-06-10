@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TodosListsController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+    {{form_start(form)}}
+        {{form_row(form.name)}}
+        {{form_row(form.color)}}
+        <input type="submit" value="creer la liste"/>
+    {{form_end(form)}}
+</div>
+{% endblock %}
