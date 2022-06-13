@@ -13,6 +13,8 @@ body{
 --grey :#282828;
 --closeButton :rgba(255, 0, 0, 0.4);
 --closeButtonHover : rgba(250, 40, 40, 0.8) ;
+--cancelButton : red;
+--cancelButtonHover : rgb(199, 0, 0);
 
 /* TodoList*/
 --todolist: #fcf1b5;
@@ -39,12 +41,27 @@ input{
     padding: 1.2rem 1.2rem;
     margin: 0 0.5rem;
     border: none;
+}
+.btn-add{
     background: var(--main);
     color: var(--font-light);
 }
-.btn:hover{
+.btn-add:hover{
     background: var(--main-darker);
 }
+.btn-cancel{
+    background: var(--cancelButton);
+    color: var(--font-light);
+}
+.btn-cancel:hover{
+    background: var(--cancelButtonHover);
+}
+.buttons{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
 .btn-delete{
     background: none;
     cursor: pointer;

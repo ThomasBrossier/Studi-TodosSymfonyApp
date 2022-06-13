@@ -27,12 +27,15 @@
             <div class="errors">
                 {{ form_errors(form) }}
             </div>
-            {% if app.request.get("_route") == "create_list" %}
-                 <input type="submit" value="creer la liste"/>
-            {% else %}
-                 <input type="submit" value="Mettre a jour la liste"/>
-            {% endif %}
-            
+            <div class="buttons">
+                {% if app.request.get("_route") == "create_list" %}
+                    <input class="btn btn-add" type="submit" value="creer la liste"/>
+                 {% else %}
+                     <input class="btn btn-add" type="submit" value="Mettre a jour la liste"/>
+                {% endif %} 
+                      <a class="btn btn-cancel" href="./">Annuler</a>
+            </div>
+           
         {{form_end(form)}}
     </div>
 </div>
