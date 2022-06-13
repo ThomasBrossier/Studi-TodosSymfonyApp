@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Todoslists;
 use App\Form\TodosListsType;
+use App\Repository\TodoslistsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,11 +15,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class TodosListsController extends AbstractController
 {
     #[Route('/', name: 'app_todos_lists')]
-    public function index(): Response
+    public function index( ManagerRegistry $doctrine): Response
     {
+        $repo = $doctrine->getRepository(Todoslists::class) ;
+        $lists = $repo->findAll();
         return $this->render('todos_lists/index.html.twig', [
             'controller_name' => 'TodosListsController',
+            'lists' => $lists
         ]);
+
     }
     #[Route('/create-list', name: 'app_create_lists')]
     public function create(Request $request,EntityManagerInterface $em): Response

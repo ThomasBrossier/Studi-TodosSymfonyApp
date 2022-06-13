@@ -14,6 +14,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Todoslists[]    findAll()
  * @method Todoslists[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
+
 class TodoslistsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
