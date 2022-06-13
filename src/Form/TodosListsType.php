@@ -15,7 +15,7 @@ class TodosListsType extends AbstractType
     {
         $builder
             ->add('name', TextType::class,["label"=>"Nom de la liste"])
-            ->add('color', ColorType::class, ["label"=>""])
+            ->add('color', ColorType::class, ["label"=>"Couleur de la liste"])
         ;
     }
 

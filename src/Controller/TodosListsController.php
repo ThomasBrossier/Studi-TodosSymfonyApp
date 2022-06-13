@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TodosListsController extends AbstractController
 {
-    #[Route('/', name: 'app_todos_lists')]
+    #[Route('/', name: 'todos_lists')]
     public function index( ManagerRegistry $doctrine): Response
     {
         $repo = $doctrine->getRepository(Todoslists::class) ;
@@ -25,7 +25,7 @@ class TodosListsController extends AbstractController
         ]);
 
     }
-    #[Route('/create-list', name: 'app_create_lists')]
+    #[Route('/create-list', name: 'create_list')]
     public function create(Request $request,EntityManagerInterface $em): Response
     {
         $todosList = new Todoslists;
@@ -39,6 +39,20 @@ class TodosListsController extends AbstractController
         return $this->render('todos_lists/create.html.twig', [
             'controller_name' => 'createListController',
             "form"=> $form->createView()
+        ]);
+    }
+    #[Route('/update-list/{id}', name: 'update_lists')]
+    public function update(Todoslists $list, Request $request,EntityManagerInterface $em): Response
+    {
+        $form = $this->createForm(TodosListsType::class,$list);
+        $form->handleRequest($request);
+        if($form-> isSubmitted() && $form-> isValid()){
+           $em->flush();
+        }
+        return $this->render('todos_lists/create.html.twig', [
+            'controller_name' => 'updateListController',
+            "form"=> $form->createView(),
+            'list'=> $list
         ]);
     }
 }

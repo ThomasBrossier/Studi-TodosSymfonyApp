@@ -1,6 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TodosListsController!{% endblock %}
+{% block title %}
+    {% if app.request.get("_route") == "create_list" %}
+        Créer une liste
+    {% else %}
+        Modifier une liste
+    {% endif %}
+{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="/styles/create-list.css"/>
@@ -8,7 +14,12 @@
 {% block body %}
 
 <div class="container">
-    <h1>Créer une nouvelle liste</h1>
+    {% if app.request.get("_route") == "create_list" %}
+        <h1>Créer une nouvelle liste</h1>
+    {% else %}
+        <h1>Modifier la liste "{{list.name}}"</h1>
+    {% endif %}
+    
     <div class="create-card">
         {{form_start(form)}}
             {{form_row(form.name)}}
@@ -16,7 +27,12 @@
             <div class="errors">
                 {{ form_errors(form) }}
             </div>
-            <input type="submit" value="creer la liste"/>
+            {% if app.request.get("_route") == "create_list" %}
+                 <input type="submit" value="creer la liste"/>
+            {% else %}
+                 <input type="submit" value="Mettre a jour la liste"/>
+            {% endif %}
+            
         {{form_end(form)}}
     </div>
 </div>
