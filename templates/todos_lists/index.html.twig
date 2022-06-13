@@ -14,7 +14,7 @@
             {% for list in lists %}
                 <div class="card">
                     <div class="card-header">
-                        <div class="title">{{ list.name}} - {{ list.color}}</div>
+                        <div class="title" style="color:{{list.color}}">{{ list.name}}</div>
                         <div class="buttons">
                             <a type="button" class="btn btn-task" href="./update-list/{{list.id}}"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a type="button" href="/delete-list/{{list.id}}" class="btn btn-delete" ><i class="fa-solid fa-trash"></i></a>
