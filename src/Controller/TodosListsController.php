@@ -35,6 +35,7 @@ class TodosListsController extends AbstractController
         if($form-> isSubmitted() && $form-> isValid()){
            $em->persist($todosList);
            $em->flush();
+           return $this->redirectToRoute("todos_lists");
         }
         return $this->render('todos_lists/create.html.twig', [
             'controller_name' => 'createListController',
@@ -48,6 +49,7 @@ class TodosListsController extends AbstractController
         $form->handleRequest($request);
         if($form-> isSubmitted() && $form-> isValid()){
            $em->flush();
+           return $this->redirectToRoute("todos_lists");
         }
         return $this->render('todos_lists/create.html.twig', [
             'controller_name' => 'updateListController',

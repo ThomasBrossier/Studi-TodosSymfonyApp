@@ -29,6 +29,8 @@ body{
 /*Buttons*/
 --addTaskButton : rgba(0,0,0,0.1);
 --hoverAddTaskButton : rgba(0,0,0, 0.2);
+--modify : green;
+--modifyHover: rgb(0, 83, 0);
 }
 input{
     border-radius: 6px ;
@@ -41,6 +43,7 @@ input{
     padding: 1.2rem 1.2rem;
     margin: 0 0.5rem;
     border: none;
+    cursor: pointer;
 }
 .btn-add{
     background: var(--main);
@@ -65,9 +68,16 @@ input{
 .btn-delete{
     background: none;
     cursor: pointer;
+    color: var(--font-dark);
 }
 .btn-delete:hover{
     color: red;
+}
+.btn-task{
+    color: var(--modify);
+}
+.btn-task:hover{
+    color: var(--modifyHover);
 }
 div{
     box-sizing: border-box;

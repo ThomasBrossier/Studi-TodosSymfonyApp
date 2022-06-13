@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if app.request.get("_route") == "create_task" %}
+        Créer une tâche
+    {% else %}
+        Modifier une tâche
+    {% endif %}
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/styles/create-list.css"/>
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    {% if app.request.get("_route") == "create_task" %}
+        <h1>Créer une nouvelle tâche</h1>
+    {% else %}
+        <h1>Modifier la tâche "{{task.title}}"</h1>
+    {% endif %}
+    
+    <div class="create-card">
+        {{form_start(form)}}
+            {{form_row(form.title)}}
+            <div class="errors">
+                {{ form_errors(form) }}
+            </div>
+            <div class="buttons">
+                {% if app.request.get("_route") == "create_task" %}
+                    <input class="btn btn-add" type="submit" value="creer la tâche"/>
+                 {% else %}
+                     <input class="btn btn-add" type="submit" value="Mettre a jour la tâche"/>
+                {% endif %} 
+                      <a class="btn btn-cancel" href="/">Annuler</a>
+            </div>
+        {{form_end(form)}}
+    </div>
+</div>
+{% endblock %}
