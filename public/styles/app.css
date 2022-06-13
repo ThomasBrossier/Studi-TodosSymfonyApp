@@ -49,6 +49,14 @@ input{
     background: var(--main);
     color: var(--font-light);
 }
+.btn-add-task{
+    background: none;
+    color: var(--font-dark);
+}
+.btn-add-task:hover{
+    background: var(--modify);
+    color: var(--font-light);
+}
 .btn-add:hover{
     background: var(--main-darker);
 }
