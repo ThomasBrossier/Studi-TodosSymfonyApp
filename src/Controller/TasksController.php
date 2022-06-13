@@ -56,4 +56,14 @@ class TasksController extends AbstractController
             'task'=> $task
         ]);
     }
+
+    
+    #[Route('/update-task-status/{id}', name: 'update_task_status')]
+    public function updateTaskStatus(Tasks $task, Request $request,EntityManagerInterface $em): Response
+    {
+           $task->setDone(!$task->isDone());
+           $em->flush();
+           return $this->redirectToRoute("todos_lists");
+    
+    }
 }

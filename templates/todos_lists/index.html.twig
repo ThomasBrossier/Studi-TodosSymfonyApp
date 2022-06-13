@@ -15,13 +15,15 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="title">{{ list.name}} - {{ list.color}}</div>
-                        <a type="button" class="btn btn-add" href="./update-list/{{list.id}}"><i class="fa-solid fa-pen-to-square"></i>Modifier</a>
-                        <a type="button" href="/delete-list/{{list.id}}" class="btn btn-delete" ><i class="fa-solid fa-trash"></i></a>
+                        <div class="buttons">
+                            <a type="button" class="btn btn-task" href="./update-list/{{list.id}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a type="button" href="/delete-list/{{list.id}}" class="btn btn-delete" ><i class="fa-solid fa-trash"></i></a>
+                        </div>
                     </div>
                         <ul class="tasksList">
                             {% for task in list.tasks %}
                                 <li class="task">
-                                    <input class="taskDone" type="checkbox" {{task.done ? "checked" : ""}} />
+                                    <input class="taskDone" type="checkbox"  {{ task.done ? "checked" : ""}}   onChange="window.location.href='/update-task-status/{{task.id}}'" />
                                     <h4>{{task.title}}</h4>
                                     <a type="button" class="btn btn-task" href="./update-task/{{task.id}}"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <a type="button" href="/delete-task/{{task.id}}" class="btn btn-delete" ><i class="fa-solid fa-trash"></i></a>
