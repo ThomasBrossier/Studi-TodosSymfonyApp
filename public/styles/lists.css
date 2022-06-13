@@ -3,6 +3,11 @@
     display: flex;
     flex-flow: column;
 }
+.topbar{
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+}
 .board{
     display: flex;
     flex-flow: row wrap;

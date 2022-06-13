@@ -7,13 +7,16 @@
 {% endblock %}
 {% block body %}
     <div class="container">
+        <div class="topbar">
+            <a  class="btn" href="./create-list">Ajouter une liste</a>
+        </div>
         <div class="board">
             {% for list in lists %}
                 <div class="card">
                     <div class="card-header">
                         <div class="title">{{ list.name}} - {{ list.color}}</div>
-                        <button type="button"><a href="./update-list/{{list.id}}">Modifier</a></button>
-                        <button type="button" >X</button>
+                        <a type="button" class="btn" href="./update-list/{{list.id}}">Modifier</a>
+                        <a type="button" class="btn btn-delete" >X</a>
                     </div>
                     <div class="todoList">
                         <ul>
