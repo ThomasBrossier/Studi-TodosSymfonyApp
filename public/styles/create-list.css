@@ -1,0 +1,33 @@
+.container{
+    width : 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.create-card{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    height: 50%;
+    background-color: var(--todolist);
+    padding: 1rem;
+}
+.create-card form{
+    width: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100%;
+}
+.create-card form div{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}

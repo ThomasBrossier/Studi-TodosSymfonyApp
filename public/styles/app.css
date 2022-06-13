@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: var(--font-family);
 }
 :root{
     box-sizing: border-box;
@@ -21,7 +22,7 @@ body{
 /*Font*/
 --font-light : white;
 --font-dark : #3c3c3c;
---font-family : 'Poppins', sans-serif;
+--font-family: 'Poppins', sans-serif;
 
 /*Buttons*/
 --addTaskButton : rgba(0,0,0,0.1);
