@@ -1,0 +1,50 @@
+.container{
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+}
+.board{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0.5rem 0.7rem;
+}
+.card{
+    width :100%;
+    max-height: auto;
+    padding: 1rem;
+    background-color : var(--todolist);
+    margin: 1rem 0;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;}
+
+.card-header{
+    display: flex;
+    flex-flow: row nowrap;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    justify-content: space-between;
+    width: 100%;  
+    }
+.todoList{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;      
+}
+.card ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    
+}
+

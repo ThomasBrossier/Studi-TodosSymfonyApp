@@ -1,11 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}TodosLists APP {% endblock %}
-
+{% block title %}TodosLists APP{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/styles/lists.css"/>
+{% endblock %}
 {% block body %}
-    {% for list in lists %}
-       {{ list.name}}
-       {{ list.color}}
-    {% endfor %}
+    <div class="container">
+        <div class="board">
+            {% for list in lists %}
+                <div class="card">
+                    <div class="card-header">
+                        <div class="title">{{ list.name}} - {{ list.color}}</div>
+                        <button type="button" >X</button>
+                    </div>
+                    <div class="todoList">
+                        <ul>
+                            
+                        </ul>      
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 
