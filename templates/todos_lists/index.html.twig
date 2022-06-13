@@ -8,15 +8,15 @@
 {% block body %}
     <div class="container">
         <div class="topbar">
-            <a  class="btn btn-add" href="./create-list">Ajouter une liste</a>
+            <a  class="btn btn-add" href="./create-list"><i class="fa-solid fa-plus"></i>Ajouter une liste</a>
         </div>
         <div class="board">
             {% for list in lists %}
                 <div class="card">
                     <div class="card-header">
                         <div class="title">{{ list.name}} - {{ list.color}}</div>
-                        <a type="button" class="btn btn-add" href="./update-list/{{list.id}}">Modifier</a>
-                        <a type="button" class="btn btn-delete" >X</a>
+                        <a type="button" class="btn btn-add" href="./update-list/{{list.id}}"><i class="fa-solid fa-pen-to-square"></i>Modifier</a>
+                        <a type="button" class="btn btn-delete" ><i class="fa-solid fa-trash"></i></a>
                     </div>
                     <div class="todoList">
                         <ul>
