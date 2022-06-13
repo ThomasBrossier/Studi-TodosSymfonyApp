@@ -55,4 +55,11 @@ class TodosListsController extends AbstractController
             'list'=> $list
         ]);
     }
+    #[Route('/delete-list/{id}', name: 'delete')]
+    public function delete(Todoslists $list, EntityManagerInterface $em): Response
+    {
+        $em->remove($list);
+        $em->flush();  
+        return $this->redirectToRoute("todos_lists");
+    }
 }

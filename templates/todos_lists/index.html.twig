@@ -16,13 +16,17 @@
                     <div class="card-header">
                         <div class="title">{{ list.name}} - {{ list.color}}</div>
                         <a type="button" class="btn btn-add" href="./update-list/{{list.id}}"><i class="fa-solid fa-pen-to-square"></i>Modifier</a>
-                        <a type="button" class="btn btn-delete" ><i class="fa-solid fa-trash"></i></a>
+                        <a type="button" href="/delete-list/{{list.id}}" class="btn btn-delete" ><i class="fa-solid fa-trash"></i></a>
                     </div>
-                    <div class="todoList">
-                        <ul>
-                            
+                        <ul class="tasksList">
+                            {% for task in list.tasks %}
+                                <li class="task">
+                                    <input class="taskDone" type="checkbox"  checked={{task.done ? "checked" : ""}} />
+                                    <h4>{{task.title}}</h4>
+                                    <a type="button" href="" class="btn btn-delete" ><i class="fa-solid fa-trash"></i></a>
+                                </li>
+                            {% endfor %}
                         </ul>      
-                    </div>
                 </div>
             {% endfor %}
         </div>

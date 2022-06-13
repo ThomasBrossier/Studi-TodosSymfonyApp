@@ -75,3 +75,21 @@ div{
 a{
     text-decoration: none;
   }
+
+.tasksList{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.task{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.taskDone{
+    width:30px;
+    height: 30px;
+    margin: 1rem;
+}
