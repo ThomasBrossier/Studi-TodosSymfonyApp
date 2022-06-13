@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    box-sizing: border-box;
+    /* Global */
+--main : #244aed;
+--main-darker : #133ae5;
+--light :#f5f6fa ;
+--dark : #282828;
+--grey :#282828;
+--closeButton :rgba(255, 0, 0, 0.4);
+--closeButtonHover : rgba(250, 40, 40, 0.8) ;
+
+/* TodoList*/
+--todolist: #fcf1b5;
+--todoTask : rgba(255, 200, 89,0.3);
+--checkTask : #fae884;
+--todoTaskHover : rgba(255,150, 89,0.3);
+/*Font*/
+--font-light : white;
+--font-dark : #3c3c3c;
+--font-family : 'Poppins', sans-serif;
+
+/*Buttons*/
+--addTaskButton : rgba(0,0,0,0.1);
+--hoverAddTaskButton : rgba(0,0,0, 0.2);
+
+}
+input{
+    border-radius: 6px ;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+}
+button{
+    border-radius: 7px;
+    font-size: 1.5rem;
+    padding: 1.2rem 1.2rem;
+    margin: 0 0.5rem;
+    border: none;
+    background-color: none;
+}
+div{
+    box-sizing: border-box;
+}
